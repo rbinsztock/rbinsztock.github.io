@@ -7,6 +7,7 @@
   <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen"/>
   <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen"/>
   <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print"/>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/0.10.0/angular-material.min.css"/>
 
   <title>senayar.github.io by senayar</title>
 </head>
@@ -15,100 +16,127 @@
 
 <header>
   <div class="container">
-    <h1>senayar.github.io</h1>
-
-    <h2></h2>
-
+    <h1 class="md-display-2">senayar.github.io</h1>
     <section id="downloads">
-      <a href="https://github.com/senayar" class="btn btn-github" target="_blank"><span class="icon"></span>Link to my
-        GitHub</a>
-      <a href="http://stackoverflow.com/users/861206/senayar" class="btn btn-github" target="_blank"><img
+      <md-button href="https://github.com/senayar" class="md-raised md-cornered" target="_blank"><span class="icon"></span>Link to my
+        GitHub</md-button>
+      <md-button href="http://stackoverflow.com/users/861206/senayar"  target="_blank"><img
               src="http://stackoverflow.com/users/flair/861206.png" width="208" height="58"
               alt="profile for senayar at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
-              title="profile for senayar at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a>
-      <a href="http://rbinsztock.herokuapp.com/" class="btn btn-github" target="_blank"><span class="icon"></span>Link
-        to my Profile</a>
-      <a href="https://twitter.com/senayar_" class="btn btn-github" target="_blank"><span class="icon"></span>Link to my
-        Twitter</a>
+              title="profile for senayar at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></md-button>
+      <md-button href="http://rbinsztock.herokuapp.com/" class="md-raised md-cornered" target="_blank"><span class="icon"></span>Link
+        to my Profile</md-button>
+      <md-button href="https://twitter.com/senayar_" class="md-raised md-cornered" target="_blank"><span class="icon"></span>Link to my
+        Twitter</md-button>
     </section>
   </div>
 </header>
 
 <div class="container">
   <section id="main_content">
-    <h3>
+    <h3 class="md-title">
       <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span
               class="octicon octicon-link"></span></a>Full Stack Developer</h3>
 
-    <p>Since the beginning I have working experience with:</p>
-
-<pre><code>  - Ruby on Rails ***
-  - AngularJS ***
-  - Phonegap (Android, iOS) **
-  - MarionetteJS *
-  - Backbone *
-  - Go *
-  - Bower **
-  - Vagrant **
-  - Docker **
-  - NPM *
-  - Debian **
-  - SSO **
-  - Git **
-  - Nginx **
-  - Passenger **
-  - Apache **
-  - Maven *
-  - SVN **
-  - MySQL **
-  - PostgreSQL **
-  - NoSQL *
-</code></pre>
-    <a class="twitter-timeline" href="https://twitter.com/hashtag/angularjs" data-widget-id="607611051543293953"><h3 class="octicon octicon-link">Tweets sur #angularjs</h3></a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    <a class="twitter-timeline" href="https://twitter.com/senayar_" data-widget-id="607612593394614272">Tweets de @senayar_</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    <h3>
-      <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span
-              class="octicon octicon-link"></span></a>Github User Search</h3>
-
+    <p class="md-body-1">Since the beginning I have working experience with:</p>
+    <md-card>
+      <md-card-content>
+        <pre>
+          <code>
+          - Ruby on Rails ***
+          - AngularJS ***
+          - Phonegap (Android, iOS) **
+          - MarionetteJS *
+          - Backbone *
+          - Go *
+          - Bower **
+          - Vagrant **
+          - Docker **
+          - NPM *
+          - Debian **
+          - SSO **
+          - Git **
+          - Nginx **
+          - Passenger **
+          - Apache **
+          - Maven *
+          - SVN **
+          - MySQL **
+          - PostgreSQL **
+          - NoSQL *
+          </code>
+        </pre>
+      </md-card-content>
+    </md-card>
+    <br />
+    <h2 class="md-title">
+      <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages">
+        <span class="octicon octicon-link"></span></a>
+      Github User Search
+    </h2>
     <div ng-controller="homeCtrl">
-      <input ng-model="username"/>
-      <button ng-click="getGitInfo()" class="btn btn-github">Let's go!</button>
+      <form ng-submit="getGitInfo()">
+        <md-input-container>
+          <label>Username</label>
+          <input type="text" ng-model="username"/>
+        </md-input-container>
+        <md-button type="submit" class="md-raised md-cornered" value="Submit">Let's go!</md-button>
+      </form>
       <br/>
       <hr />
       <div ng-show="userNotFound">
-        <h2>User does not exist in Github</h2>
+        <h2 class="md-title">User does not exist in Github</h2>
       </div>
       <div ng-show="loaded">
-        <h2> {{userInfo.name}}
-          <span><a href="{{userInfo.html_url}}" target="_blank">@{{userInfo.login}}</a></span>
-        </h2>
-
-        <div class="ghcontent">
-          <div class="avi">
-            <a href="{{ userInfo.html_url }}" target="_blank">
-              <img src="{{ userInfo.avatar_url }}" width="80" height="80" alt="{{ userInfo.login }}"></a>
-          </div>
-          Followers: {{ userInfo.followers }} - Following: {{ userInfo.following }}<br>Repos: {{ userInfo.public_repos
-          }}</p>
-        </div>
-        <p ng-hide="reposFound">No repository!</p>
-
+        <md-card>
+          <img src="{{ userInfo.avatar_url }}" alt="{{ userInfo.login }}">
+          <md-card-content>
+            <h2 class="md-title">{{userInfo.name}}</h2>
+            <p class="md-body-1"><a href="{{userInfo.html_url}}" target="_blank">@{{userInfo.login}}</a></p>
+          </md-card-content>
+          <md-card-footer>
+            Followers: {{ userInfo.followers }} - Following: {{ userInfo.following }}<br/>
+            Repos: {{ userInfo.public_repos }}
+            <p ng-hide="reposFound">No repository!</p>
+          </md-card-footer>
+        </md-card>
         <div ng-show="reposFound">
-          <p><strong>Public Repository List:</strong></p>
-          <ul>
-            <li ng-repeat="repo in repos"><a class="btn btn-github" href="{{repo.html_url}}" target="_blank"> {{repo.name}} </a></li>
-          </ul>
+          <h2>Public Repository List:</h2>
+          <md-card ng-repeat="repo in repos">
+            <md-card-content>
+              <h2 class="md-title">{{repo.name}}</h2>
+              <p class="md-body-1">Language : {{repo.language}}</p>
+              <p class="md-body-1">Issues : {{repo.open_issues}}</p>
+              <p class="md-body-1">Created at : {{repo.created_at}}</p>
+              <p class="md-body-1">Last Updated : {{repo.updated_at | date}}</p>
+              <p class="md-body-1">Clone Url : {{repo.clone_url}}</p>
+              <p class="md-body-1">Owner : {{repo.owner.login}}</p>
+              <md-button class="md-raised md-cornered" href="{{repo.html_url}}" target="_blank"> Github Link </md-button>
+            </md-card-content>
+          </md-card>
         </div>
       </div>
     </div>
-
+    <md-card>
+      <md-card-content>
+        <a class="twitter-timeline" href="https://twitter.com/hashtag/angularjs" data-widget-id="607611051543293953"><h3 class="octicon octicon-link">Tweets sur #angularjs</h3></a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </md-card-content>
+    </md-card>
+    <md-card>
+      <md-card-content>
+        <a class="twitter-timeline" href="https://twitter.com/senayar_" data-widget-id="607612593394614272">Tweets de @senayar_</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </md-card-content>
+    </md-card>
   </section>
 </div>
 
 
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-aria.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-animate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/0.10.0/angular-material.js"></script>
 <script src="javascripts/main.js"></script>
 </html>

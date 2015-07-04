@@ -1,4 +1,4 @@
-angular.module('senayar', [], function ($locationProvider) {
+angular.module('senayar', ['ngMaterial', 'ngAnimate'], function ($locationProvider) {
   $locationProvider.hashPrefix('');
 });
 
@@ -18,6 +18,7 @@ angular.module('senayar').controller('homeCtrl', ['$scope', 'githubService', fun
       githubService.getUserRepos($scope.username).then(function (data) {
         if (data != null) {
           $scope.repos = data;
+          console.log(data);
           $scope.reposFound = data.length > 0;
         }
       }, (function (error) {
