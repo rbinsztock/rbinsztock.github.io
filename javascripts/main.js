@@ -1,15 +1,15 @@
-angular.module('senayar', ['ngMaterial', 'ngAnimate'],  $locationProvider => {
+angular.module('senayar', ['ngMaterial', 'ngAnimate'],  function($locationProvider) {
   $locationProvider.hashPrefix('');
 });
 
-angular.module('senayar').controller('homeCtrl', ['$scope', 'githubService', ($scope, githubService) => {
+angular.module('senayar').controller('homeCtrl', ['$scope', 'githubService', function($scope, githubService) {
   $scope.username = 'rbinsztock';
-  $scope.getGitInfo = () => {
+  $scope.getGitInfo = function() {
     $scope.userNotFound = false;
     $scope.reposNotFound = false;
     githubService.checkIfUserExist($scope.username)
-      .then(data => {
-        if (data != null){
+      .then(function(data) {
+        if (data != null) {
           $scope.loaded = true;
           $scope.userInfo = data;
         }
@@ -17,27 +17,27 @@ angular.module('senayar').controller('homeCtrl', ['$scope', 'githubService', ($s
           $scope.userNotFound = true;
         }
         githubService.getUserRepos($scope.username)
-          .then(data => {
+          .then(function(data) {
             if (data != null) {
               $scope.repos = data;
               $scope.reposFound = data.length > 0;
             }
-          }, (error => {
+          }, function(error) {
             $scope.reposNotFound = true;
-          }));
-      }, (error => {
+          });
+      }, function(error) {
         $scope.userNotFound = true;
-      }));
+      });
   };
 
 }]);
 
-angular.module('senayar').service('githubService', ['$http', '$q', ($http, $q) => {
-  this.checkIfUserExist = username => {
+angular.module('senayar').service('githubService', ['$http', '$q', function($http, $q) {
+  this.checkIfUserExist = function(username) {
     return $http.get("https://api.github.com/users/" + username);
   };
 
-  this.getUserRepos =  username => {
+  this.getUserRepos =  function(username) {
     return $http.get("https://api.github.com/users/" + username + "/repos");
   };
 }]);
