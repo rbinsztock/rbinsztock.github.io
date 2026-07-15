@@ -1,0 +1,24 @@
+{
+  "name": "Rémy Binsztock — Portfolio",
+  "short_name": "RB Portfolio",
+  "description": "Senior full-stack developer and cybersecurity engineer portfolio — React, Angular, Rails, Node.js, AWS, and ISO 27001.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#050810",
+  "theme_color": "#050810",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}

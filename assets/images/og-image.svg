@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Rémy Binsztock — Full-Stack Senior Developer and Cybersecurity Engineer</title>
+  <desc id="desc">Portfolio preview card for Rémy Binsztock, senior full-stack developer and cybersecurity engineer based in Île-de-France, France.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050810"/>
+      <stop offset="55%" stop-color="#0a1220"/>
+      <stop offset="100%" stop-color="#071018"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="78%" cy="28%" r="42%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <g opacity="0.35" stroke="#00f0ff" stroke-width="1" fill="none">
+    <path d="M80 120 L220 80 L360 140"/>
+    <path d="M900 500 L1040 460 L1180 520"/>
+    <circle cx="980" cy="160" r="3" fill="#00f0ff" stroke="none"/>
+    <circle cx="220" cy="480" r="2.5" fill="#7c3aed" stroke="none"/>
+    <circle cx="760" cy="120" r="2" fill="#00f0ff" stroke="none"/>
+  </g>
+
+  <rect x="64" y="64" width="1072" height="502" rx="24" fill="none" stroke="url(#accent)" stroke-opacity="0.35" stroke-width="1.5"/>
+
+  <g transform="translate(96 118)">
+    <rect x="0" y="0" width="56" height="56" rx="28" fill="url(#accent)"/>
+    <text x="28" y="36" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" font-weight="700" fill="#050810">RB</text>
+  </g>
+
+  <text x="176" y="154" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="22" font-weight="600" fill="#94a3b8" letter-spacing="0.04em">PORTFOLIO</text>
+
+  <text x="96" y="248" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="64" font-weight="700" fill="#f8fafc" letter-spacing="-0.03em">Rémy Binsztock</text>
+
+  <text x="96" y="312" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="30" font-weight="600" fill="#00f0ff">Full-Stack Senior Developer</text>
+  <text x="96" y="354" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="30" font-weight="600" fill="#c4b5fd">Cybersecurity Engineer</text>
+
+  <text x="96" y="420" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="24" fill="#94a3b8">15+ years · React · Angular · Rails · Node.js · AWS · ISO 27001</text>
+  <text x="96" y="458" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="22" fill="#64748b">Île-de-France, France · rbweb.fr</text>
+
+  <g filter="url(#softGlow)" transform="translate(860 360)">
+    <circle cx="120" cy="120" r="88" fill="none" stroke="#00f0ff" stroke-opacity="0.45" stroke-width="1.5" stroke-dasharray="6 10"/>
+    <circle cx="120" cy="120" r="58" fill="none" stroke="#7c3aed" stroke-opacity="0.55" stroke-width="1.5"/>
+    <circle cx="120" cy="120" r="10" fill="#00f0ff"/>
+  </g>
+</svg>
